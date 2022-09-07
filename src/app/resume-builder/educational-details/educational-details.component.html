@@ -1,0 +1,52 @@
+<h1>Educational Details</h1>
+<div>
+    <form [formGroup]="form">
+    <div formArrayName="educationalDetails">
+      <div formGroupName="0">
+    <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <input
+          matInput
+          placeholder="Type"
+          formControlName="type"
+        />
+      </mat-form-field>
+
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Marks</mat-label>
+        <input
+          matInput
+          placeholder="Marks"
+          formControlName="marks"
+        />`
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Total</mat-label>
+        <input
+          matInput
+          placeholder="Total"
+          formControlName="total"
+        />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Year</mat-label>
+        <input
+          matInput
+          placeholder="Year"
+          formControlName="year"
+        />
+      </mat-form-field>
+      <br>
+    </div>
+    </div>
+    </form>
+</div>
+<div>
+  <button mat-button matStepperPrevious type="button">Back</button>
+  <button mat-button matStepperNext type="button" [disabled]="form.controls['educationalDetails'].invalid">Next</button>
+</div>

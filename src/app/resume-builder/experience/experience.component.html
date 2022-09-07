@@ -1,0 +1,59 @@
+<h1>Experience</h1>
+<div>
+    <form [formGroup]="form">
+    <div formArrayName="experience">
+      <div formGroupName="0">
+    <mat-form-field appearance="fill">
+        <mat-label>Comapny</mat-label>
+        <input
+          matInput
+          placeholder="Company"
+          formControlName="company"
+        />
+      </mat-form-field>
+
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Role</mat-label>
+        <input
+          matInput
+          placeholder="Role"
+          formControlName="role"
+        />`
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Responsibilities</mat-label>
+        <input
+          matInput
+          placeholder="Responsibilities"
+          formControlName="responsibilities"
+        />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>From Year</mat-label>
+        <input
+          matInput
+          placeholder="From Year"
+          formControlName="fromYear"
+        />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>To Year</mat-label>
+        <input
+          matInput
+          placeholder="To Year"
+          formControlName="toYear"
+        />
+      </mat-form-field>
+      <br>
+
+    </div>
+    </div>
+    </form>
+</div>

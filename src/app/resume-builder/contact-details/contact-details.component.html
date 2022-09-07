@@ -1,0 +1,65 @@
+<h1>Contact Details</h1>
+<div>
+    <form [formGroup]="form">
+    <div formGroupName="contactDetails">
+    <h2>Work</h2>
+    <br>
+    <div formArrayName="work">
+    <div formGroupName="0">
+    <mat-form-field appearance="fill">
+        <mat-label>Mobile Number</mat-label>
+        <input
+          matInput
+          placeholder="Mobile Number"
+          formControlName="mobileNumber"
+        />
+      </mat-form-field>
+
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Telephone Number</mat-label>
+        <input
+          matInput
+          placeholder="Telephone Number"
+          formControlName="telephoneNumber"
+        />`
+      </mat-form-field>
+      <br>
+
+    <button mat-button matStepperPrevious type="button">Add another work</button>
+
+    </div>
+    </div>
+
+      <h2>Home</h2>
+      <br>
+      <div formArrayName="home">
+        <div formGroupName="0">
+      <mat-form-field appearance="fill">
+        <mat-label>Mobile Number</mat-label>
+        <input
+          matInput
+          placeholder="Mobile Number"
+          formControlName="mobileNumber"
+        />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Telephone Number</mat-label>
+        <input
+          matInput
+          placeholder="Telephone Number"
+          formControlName="telephoneNumber"
+        />
+      </mat-form-field>
+      <br>
+    </div>
+  </div>
+  </div>
+    </form>
+</div>
+<div>
+  <button mat-button matStepperPrevious type="button">Back</button>
+  <button mat-button matStepperNext type="button" [disabled]="form.controls['contactDetails'].invalid">Next</button>
+</div>

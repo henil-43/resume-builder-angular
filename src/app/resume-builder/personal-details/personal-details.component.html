@@ -1,0 +1,62 @@
+<h1>Personal Details</h1>
+<div>
+    <form [formGroup]="form">
+    <div formGroupName="personalDetails">
+    <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input
+          matInput
+          placeholder="First name"
+          formControlName="firstName"
+          required
+        />
+      </mat-form-field>
+
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input
+          matInput
+          placeholder="Last name"
+          formControlName="lastName"
+          required
+        />`
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Father Name</mat-label>
+        <input
+          matInput
+          placeholder="Father name"
+          formControlName="fatherName"
+        />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Mother Name</mat-label>
+        <input
+          matInput
+          placeholder="Mother name"
+          formControlName="motherName"
+        />
+      </mat-form-field>
+      <br>
+    </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Career Objective</mat-label>
+        <input
+          matInput
+          placeholder="Career Objective"
+          formControlName="careerObjective"
+          required
+        />
+      </mat-form-field>
+      <br>
+    </form>
+</div>
+<div>
+  <button mat-button matStepperNext type="button" [disabled]="form.controls['personalDetails'].invalid || form.controls['careerObjective'].invalid">Next</button>
+</div>
