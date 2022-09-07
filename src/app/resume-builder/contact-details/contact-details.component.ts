@@ -12,7 +12,7 @@ export class ContactDetailsComponent implements OnInit {
   constructor(private formProvider: FormProviderService) { }
 
   add(){
-    
+    this.form.controls['contactDetails']
   }
   ngOnInit(): void {
     this.form = this.formProvider.form 
