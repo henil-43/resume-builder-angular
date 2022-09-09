@@ -15,7 +15,6 @@ export class PersonalDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formProvider.form
-    console.log("first",this.form)
   }
 
 }

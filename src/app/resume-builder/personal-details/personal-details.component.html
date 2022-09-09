@@ -20,7 +20,7 @@
           placeholder="Last name"
           formControlName="lastName"
           required
-        />`
+        />
       </mat-form-field>
       <br>
 
@@ -58,5 +58,5 @@
     </form>
 </div>
 <div>
-  <button mat-button matStepperNext type="button" [disabled]="form.controls['personalDetails'].invalid || form.controls['careerObjective'].invalid">Next</button>
+  <button mat-stroked-button matStepperNext type="button" [disabled]="form.controls['personalDetails'].invalid || form.controls['careerObjective'].invalid">Next</button>
 </div>

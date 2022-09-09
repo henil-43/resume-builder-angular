@@ -2,9 +2,10 @@
 <div>
     <form [formGroup]="form">
     <div formArrayName="experience">
-      <div formGroupName="0">
+    <ng-container *ngFor="let exp of experience.controls">  
+    <div [formGroup]=exp>
     <mat-form-field appearance="fill">
-        <mat-label>Comapny</mat-label>
+        <mat-label>Company</mat-label>
         <input
           matInput
           placeholder="Company"
@@ -19,7 +20,7 @@
           matInput
           placeholder="Role"
           formControlName="role"
-        />`
+        />
       </mat-form-field>
       <br>
 
@@ -52,8 +53,22 @@
         />
       </mat-form-field>
       <br>
+    </div>
+  </ng-container>
+    </div>
 
+    <button mat-button (click)="addExperience()">Add another experience</button>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Skills</mat-label>
+        <input
+          matInput
+          placeholder="Skills"
+          formControlName="skills"
+        />
+      </mat-form-field>
+      <br>
     </div>
-    </div>
+
     </form>
 </div>

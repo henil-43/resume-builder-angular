@@ -5,7 +5,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MatIconModule } from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { ContactDetailsComponent } from './resume-builder/contact-details/contac
 import { EducationalDetailsComponent } from './resume-builder/educational-details/educational-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExperienceComponent } from './resume-builder/experience/experience.component';
+import { FormComponentComponent } from './resume-builder/contact-details/components/form-component/form-component.component';
+import { PreviewResumeComponent } from './preview-resume/preview-resume.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { ExperienceComponent } from './resume-builder/experience/experience.comp
     PersonalDetailsComponent,
     ContactDetailsComponent,
     EducationalDetailsComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    FormComponentComponent,
+    PreviewResumeComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,8 @@ import { ExperienceComponent } from './resume-builder/experience/experience.comp
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
+    MatCardModule,
     BrowserAnimationsModule
   ],
   providers: [],

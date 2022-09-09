@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Form, FormArray, FormGroup } from '@angular/forms';
 import { FormProviderService } from 'src/app/services/form-provider.service';
 
 @Component({
@@ -9,13 +9,18 @@ import { FormProviderService } from 'src/app/services/form-provider.service';
 })
 export class ContactDetailsComponent implements OnInit {
   form: FormGroup = new FormGroup({})
+  work: any
+  home:any
   constructor(private formProvider: FormProviderService) { }
-
-  add(){
-    this.form.controls['contactDetails']
+  
+  add(domain:string): void{
+    this.formProvider.addContact(domain);
   }
+
   ngOnInit(): void {
-    this.form = this.formProvider.form 
+    this.form = this.formProvider.form
+    this.work = this.form.controls['contactDetails'].get('work') as FormArray
+    this.home = this.form.controls['contactDetails'].get('home') as FormArray 
   }
 
 }

@@ -2,7 +2,8 @@
 <div>
     <form [formGroup]="form">
     <div formArrayName="educationalDetails">
-      <div formGroupName="0">
+      <ng-container *ngFor="let education of educationDetails.controls">
+      <div [formGroup]=education>
     <mat-form-field appearance="fill">
         <mat-label>Type</mat-label>
         <input
@@ -19,7 +20,7 @@
           matInput
           placeholder="Marks"
           formControlName="marks"
-        />`
+        />
       </mat-form-field>
       <br>
 
@@ -43,10 +44,14 @@
       </mat-form-field>
       <br>
     </div>
+  </ng-container>
     </div>
+
+  <button mat-button type="button" (click)="addEducation()">Add another education</button>
+
     </form>
 </div>
 <div>
-  <button mat-button matStepperPrevious type="button">Back</button>
-  <button mat-button matStepperNext type="button" [disabled]="form.controls['educationalDetails'].invalid">Next</button>
+  <button mat-stroked-button matStepperPrevious type="button">Back</button>
+  <button mat-stroked-button matStepperNext type="button" [disabled]="form.controls['educationalDetails'].invalid">Next</button>
 </div>

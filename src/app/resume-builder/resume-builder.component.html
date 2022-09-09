@@ -1,7 +1,5 @@
 <div>
-<p>resume-builder works!</p>
-
-<form [formGroup]=form>
+<form [formGroup]=form (submit)="onSubmit()">
 <mat-horizontal-stepper [linear]="true" #stepper>
     <mat-step label="personal-details">
       <div>

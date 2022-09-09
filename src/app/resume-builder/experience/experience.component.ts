@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormArray, FormGroup } from '@angular/forms';
 import { FormProviderService } from 'src/app/services/form-provider.service';
 
 @Component({
@@ -9,10 +9,16 @@ import { FormProviderService } from 'src/app/services/form-provider.service';
 })
 export class ExperienceComponent implements OnInit {
   form: FormGroup = new FormGroup({}) 
+  experience: any;
   constructor(private formProvider: FormProviderService) { }
+
+  addExperience():void{
+    this.formProvider.addExperience()
+  }
 
   ngOnInit(): void {
     this.form = this.formProvider.form;
+    this.experience = this.form.controls['experience'] as FormArray
   }
 
 }
