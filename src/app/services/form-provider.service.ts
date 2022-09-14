@@ -57,7 +57,7 @@ export class FormProviderService {
       telephoneNumber: [null, Validators.required]
     })
 
-    const work = this.form.controls['contactDetails'].get(domain) as FormArray
+    const work = this.form.get(`contactDetails.${domain}`) as FormArray
     work.push(newContact);
   }
 
@@ -69,7 +69,7 @@ export class FormProviderService {
       year: [null, Validators.required]
     })
 
-    const education = this.form.controls['educationalDetails'] as FormArray
+    const education = this.form.get('educationalDetails') as FormArray
     education.push(newEducation);
   }
 
@@ -82,7 +82,23 @@ export class FormProviderService {
       toYear: [null, Validators.required]
     })
 
-    const experience = this.form.controls['experience'] as FormArray
+    const experience = this.form.get('experience') as FormArray
     experience.push(exp)
   }
+
+  deleteContact(domain: string, index: number):void{
+    const data = this.form.get(`contactDetails.${domain}`) as FormArray;
+    data.removeAt(index);
+  }
+
+  deleteEducation(index: number):void{
+    const data = this.form.get("educationalDetails") as FormArray;
+    data.removeAt(index);
+  }
+
+  deleteExperience(index: number):void{
+    const data = this.form.get("experience") as FormArray;
+    data.removeAt(index);
+  }
+
 }

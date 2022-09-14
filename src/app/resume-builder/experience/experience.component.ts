@@ -16,6 +16,10 @@ export class ExperienceComponent implements OnInit {
     this.formProvider.addExperience()
   }
 
+  deleteExperience(index: number):void{
+    this.formProvider.deleteExperience(index);
+  }
+
   ngOnInit(): void {
     this.form = this.formProvider.form;
     this.experience = this.form.controls['experience'] as FormArray

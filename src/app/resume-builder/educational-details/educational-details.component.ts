@@ -15,6 +15,10 @@ export class EducationalDetailsComponent implements OnInit {
   addEducation():void{
     this.formProvider.addEducation();
   }
+
+  deleteEducation(index: number):void{
+    this.formProvider.deleteEducation(index);
+  }
   
   ngOnInit(): void {
     this.form = this.formProvider.form

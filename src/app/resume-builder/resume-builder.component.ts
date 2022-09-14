@@ -17,7 +17,7 @@ export class ResumeBuilderComponent implements OnInit {
       return false
     }
 
-    this.router.navigate(['preview'])
+    this.router.navigate(['preview'], {skipLocationChange: true})
     
   }
 

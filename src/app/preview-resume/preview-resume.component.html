@@ -4,10 +4,11 @@
         <title>HTML Resume Template</title>
     </head>
     <body class="letter">
-        <section id="save">
-            <section>
+        <section id="save" #save>
+            <section class="base-class">
                 <section>
                     <header class="name" aria-label="Joe Smith">
+                        <div style="margin-left: 16px; margin-right: 16px;">
                             <svg width="257px" height="35px" viewBox="0 0 257 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="Montserrat-Regular, Montserrat" font-size="48" font-weight="normal">
                                     <g id="Letter" transform="translate(-54.000000, -140.000000)" fill="#484848">
@@ -17,18 +18,21 @@
                                     </g>
                                 </g>
                             </svg>
-                        <h4>{{controlValue('careerObjective')}}</h4>
-                        <hr />
+                        <h4 style="margin-left: 10px;"><i>{{controlValue('careerObjective')}}</i></h4>
+                    </div>
+                    <hr />
                     </header>
                     <section>
                         <mat-card class="details">
+                            <div style="flex-direction: row; display: flex; flex-basis: content; justify-content: space-between; margin-left:16px ; margin-right: 16px;">
                             <div style="display: flex;">
-                            <mat-card-content>Father Name: </mat-card-content>
+                            <mat-card-content>Father Name : </mat-card-content>
                             <mat-card-content>{{personalDetails.get('fatherName').value}}</mat-card-content>
                             </div>
                             <div style="display: flex;">
-                            <mat-card-content>Mother Name: </mat-card-content>
+                            <mat-card-content>Mother Name : </mat-card-content>
                             <mat-card-content>{{personalDetails.get('motherName').value}}</mat-card-content>
+                            </div>
                         </div>
                     </mat-card>
                         <mat-card class="experience">
@@ -38,13 +42,13 @@
                             </mat-card-title>
                             </mat-card-header>
                             <hr />
-                            <ol>
+                            <ol style="margin-left: 16px; margin-right: 16px;">
                                 <li *ngFor="let exp of experience.value">
                                     <header>
-                                        <p class="sanserif">{{exp.company}}</p>
+                                        <b class="sanserif">{{exp.company}}</b>
                                         <time>{{exp.fromYear+" - " + exp.toYear}}</time>
                                     </header>
-                                    <mat-card-subtitle>{{exp.role}}</mat-card-subtitle>
+                                    <p><i>{{exp.role}}</i></p>
                                     <ul>
                                     <li>{{exp.responsibilities}}</li>
                                     </ul>
@@ -58,11 +62,11 @@
                                 </mat-card-title>
                             </mat-card-header>
                             <hr />
-                            <ol>
+                            <ol style="margin-left: 16px; margin-right: 16px;">
                                 <li *ngFor="let edu of educationalDetails.value">
                                     <div>
-                                        <mat-card-subtitle class="sanserif">{{edu.type}}</mat-card-subtitle>
-                                        <p>{{edu.year}}</p>
+                                        <b class="sanserif">{{edu.type}}</b>
+                                        <time>{{edu.year}}</time>
                                     </div>
                                     <div>
                                         <mat-card-content>{{edu.marks + " / "+edu.total}}</mat-card-content>
@@ -73,40 +77,42 @@
                         </mat-card>
                         <mat-card class="contact">
                             <mat-card-header>
-                            <mat-card-title>Contact</mat-card-title>
+                            <mat-card-title >Contact</mat-card-title>
                             </mat-card-header>
                             <hr />
-                            <mat-card-subtitle>Work</mat-card-subtitle>
+                            <div style="margin-left: 16px; margin-right: 16px;">
+                            <b>Work</b>
                             <mat-card-content>
                             <ul>
-                                <li *ngFor="let work of contactDetails.value.work">
+                                <li *ngFor="let work of contactDetails.value.work" style="flex-direction: row; display: flex; flex-basis: content; justify-content: space-between;">
                                 <div style="display: flex;">
-                                    <p>Mobile: </p>
-                                    <p><i class="fa fa-map-marker-alt" title="Location">{{work.mobileNumber}}</i></p>
+                                    <p>Mobile : </p>
+                                    <p class="fa fa-map-marker-alt" title="Location">{{work.mobileNumber}}</p>
                                 </div>
                                 <div style="display: flex;">
-                                    <p>Telephone: </p>
-                                    <p><i class="fa fa-map-marker-alt" title="Location">{{work.telephoneNumber}}</i></p>
+                                    <p>Telephone : </p>
+                                    <p class="fa fa-map-marker-alt" title="Location">{{work.telephoneNumber}}</p>
                                 </div>
                                 </li>
                             </ul>
                             <br>
                         </mat-card-content>
-                            <mat-card-subtitle>Home</mat-card-subtitle>
+                            <b>Home</b>
                         <mat-card-content>
                             <ul>
-                                <li *ngFor="let home of contactDetails.value.home">
+                                <li *ngFor="let home of contactDetails.value.home" style="flex-direction: row; display: flex; flex-basis: content; justify-content: space-between;">
                                 <div style="display: flex;">
-                                    <p>Mobile: </p>
-                                    <p><i class="fa fa-map-marker-alt" title="Location">{{home.mobileNumber}}</i></p>
+                                    <p>Mobile : </p>
+                                    <p class="fa fa-map-marker-alt" title="Location">{{home.mobileNumber}}</p>
                                 </div>
                                 <div style="display: flex;">
-                                    <p>Telephone: </p>
-                                    <p><i class="fa fa-map-marker-alt" title="Location">{{home.telephoneNumber}}</i></p>
+                                    <p>Telephone : </p>
+                                    <p class="fa fa-map-marker-alt" title="Location">{{home.telephoneNumber}}</p>
                                 </div>
                                 </li>
                             </ul>
                         </mat-card-content>
+                    </div>
                         </mat-card>
                         <mat-card class="skills">
                             <mat-card-header>
@@ -115,7 +121,7 @@
                                 </mat-card-title>
                             </mat-card-header>
                             <hr />
-                            <ul>
+                            <ul style="margin-left: 16px; margin-right: 16px;">
                                 <li *ngFor="let skill of skills">
                                     <span>{{skill}}</span>
                                 </li>
@@ -125,6 +131,9 @@
                 </section>
             </section>
         </section>
+        <footer>
+        <button mat-stroked-button (click)="downloadPdf()">Download</button>
+        </footer>
     </body>
 </html>
 

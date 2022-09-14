@@ -17,6 +17,11 @@ export class ContactDetailsComponent implements OnInit {
     this.formProvider.addContact(domain);
   }
 
+  delete(domain: string,index: number):void{
+    this.formProvider.deleteContact(domain, index)
+    console.log(this.form)
+
+  }
   ngOnInit(): void {
     this.form = this.formProvider.form
     this.work = this.form.controls['contactDetails'].get('work') as FormArray

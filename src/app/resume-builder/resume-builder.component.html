@@ -1,24 +1,30 @@
 <div>
 <form [formGroup]=form (submit)="onSubmit()">
 <mat-horizontal-stepper [linear]="true" #stepper>
-    <mat-step label="personal-details">
-      <div>
+    <mat-step label="personal-details" >
+      <div class="mat-step">
         <app-personal-details></app-personal-details>
       </div>
           
     </mat-step>
     <mat-step label="contact-details">
-        <app-contact-details></app-contact-details> 
+      <div class="mat-step">
+        <app-contact-details></app-contact-details>
+      </div> 
     </mat-step>
     <mat-step label="educational-details">
+    <div class="mat-step">
         <app-educational-details></app-educational-details>
+      </div>
     </mat-step>
     <mat-step label="eperience">
-        <app-experience></app-experience>
+    <div class="mat-step">    
+      <app-experience></app-experience>
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button [disabled]="form.invalid">Submit</button>
         </div>
+    </div>
     </mat-step>
   </mat-horizontal-stepper>
 </form>
